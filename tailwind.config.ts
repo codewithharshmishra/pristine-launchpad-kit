@@ -22,7 +22,6 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
-          soft: "hsl(var(--primary-soft))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -48,6 +47,13 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // Ecommerce Custom Colors
+        navy: "hsl(var(--navy))",
+        orange: "hsl(var(--orange))",
+        teal: "hsl(var(--teal))",
+        'offer-red': "hsl(var(--offer-red))",
+        'text-primary': "hsl(var(--text-primary))",
+        'text-secondary': "hsl(var(--text-secondary))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -58,20 +64,6 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-      },
-      fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
-      },
-      backgroundImage: {
-        "gradient-primary": "var(--gradient-primary)",
-        "gradient-subtle": "var(--gradient-subtle)",
-      },
-      boxShadow: {
-        elegant: "var(--shadow-elegant)",
-        soft: "var(--shadow-soft)",
-      },
-      transitionTimingFunction: {
-        smooth: "var(--transition-smooth)",
       },
       borderRadius: {
         lg: "var(--radius)",
