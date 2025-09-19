@@ -77,56 +77,125 @@ const Header = () => {
 
         {/* Navigation */}
         <nav className="border-t border-white/10 py-3">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-8">
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" className="text-white hover:text-orange">
-                    <Menu className="h-4 w-4 mr-2" />
-                    All Categories
-                    <ChevronDown className="h-4 w-4 ml-2" />
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-56 bg-white">
-                  <DropdownMenuLabel>Shop by Category</DropdownMenuLabel>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem asChild>
-                    <Link to="/category/electronics" className="w-full">Electronics</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuSub>
-                    <DropdownMenuSubTrigger>
-                      <span>Clothing</span>
-                    </DropdownMenuSubTrigger>
-                    <DropdownMenuSubContent className="bg-white">
-                      <DropdownMenuItem asChild>
-                        <Link to="/category/clothing-men" className="w-full">Men</Link>
-                      </DropdownMenuItem>
-                      <DropdownMenuItem asChild>
-                        <Link to="/category/clothing-women" className="w-full">Women</Link>
-                      </DropdownMenuItem>
-                      <DropdownMenuItem asChild>
-                        <Link to="/category/clothing-kids" className="w-full">Kids</Link>
-                      </DropdownMenuItem>
-                    </DropdownMenuSubContent>
-                  </DropdownMenuSub>
-                  <DropdownMenuItem asChild>
-                    <Link to="/category/home" className="w-full">Home & Garden</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link to="/category/sports" className="w-full">Sports & Outdoors</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link to="/category/books" className="w-full">Books</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link to="/category/beauty" className="w-full">Beauty & Health</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link to="/category/automotive" className="w-full">Automotive</Link>
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
-            </div>
+          <div className="flex items-center gap-8">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" className="text-white hover:text-orange">
+                  <Menu className="h-4 w-4 mr-2" />
+                  All Categories
+                  <ChevronDown className="h-4 w-4 ml-2" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-56 bg-white">
+                <DropdownMenuLabel>Shop by Category</DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuSub>
+                  <DropdownMenuSubTrigger>
+                    <span>Electronics</span>
+                  </DropdownMenuSubTrigger>
+                  <DropdownMenuSubContent className="bg-white">
+                    <DropdownMenuItem asChild>
+                      <Link to="/category/smartphones" className="w-full">Smartphones</Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link to="/category/laptops" className="w-full">Laptops</Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link to="/category/tablets" className="w-full">Tablets</Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link to="/category/headphones" className="w-full">Headphones</Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link to="/category/cameras" className="w-full">Cameras</Link>
+                    </DropdownMenuItem>
+                  </DropdownMenuSubContent>
+                </DropdownMenuSub>
+                <DropdownMenuSub>
+                  <DropdownMenuSubTrigger>
+                    <span>Clothing</span>
+                  </DropdownMenuSubTrigger>
+                  <DropdownMenuSubContent className="bg-white">
+                    <DropdownMenuItem asChild>
+                      <Link to="/category/clothing-men" className="w-full">Men</Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link to="/category/clothing-women" className="w-full">Women</Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link to="/category/clothing-kids" className="w-full">Kids</Link>
+                    </DropdownMenuItem>
+                  </DropdownMenuSubContent>
+                </DropdownMenuSub>
+                <DropdownMenuSub>
+                  <DropdownMenuSubTrigger>
+                    <span>Home & Garden</span>
+                  </DropdownMenuSubTrigger>
+                  <DropdownMenuSubContent className="bg-white">
+                    <DropdownMenuItem asChild>
+                      <Link to="/category/furniture" className="w-full">Furniture</Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link to="/category/kitchen" className="w-full">Kitchen</Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link to="/category/garden" className="w-full">Garden</Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link to="/category/decor" className="w-full">Home Decor</Link>
+                    </DropdownMenuItem>
+                  </DropdownMenuSubContent>
+                </DropdownMenuSub>
+                <DropdownMenuSub>
+                  <DropdownMenuSubTrigger>
+                    <span>Sports & Outdoors</span>
+                  </DropdownMenuSubTrigger>
+                  <DropdownMenuSubContent className="bg-white">
+                    <DropdownMenuItem asChild>
+                      <Link to="/category/fitness" className="w-full">Fitness</Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link to="/category/outdoor" className="w-full">Outdoor</Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link to="/category/sports-equipment" className="w-full">Sports Equipment</Link>
+                    </DropdownMenuItem>
+                  </DropdownMenuSubContent>
+                </DropdownMenuSub>
+                <DropdownMenuSub>
+                  <DropdownMenuSubTrigger>
+                    <span>Books</span>
+                  </DropdownMenuSubTrigger>
+                  <DropdownMenuSubContent className="bg-white">
+                    <DropdownMenuItem asChild>
+                      <Link to="/category/fiction" className="w-full">Fiction</Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link to="/category/non-fiction" className="w-full">Non-Fiction</Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link to="/category/textbooks" className="w-full">Textbooks</Link>
+                    </DropdownMenuItem>
+                  </DropdownMenuSubContent>
+                </DropdownMenuSub>
+                <DropdownMenuSub>
+                  <DropdownMenuSubTrigger>
+                    <span>Beauty & Health</span>
+                  </DropdownMenuSubTrigger>
+                  <DropdownMenuSubContent className="bg-white">
+                    <DropdownMenuItem asChild>
+                      <Link to="/category/skincare" className="w-full">Skincare</Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link to="/category/makeup" className="w-full">Makeup</Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link to="/category/health" className="w-full">Health</Link>
+                    </DropdownMenuItem>
+                  </DropdownMenuSubContent>
+                </DropdownMenuSub>
+              </DropdownMenuContent>
+            </DropdownMenu>
             
             <div className="flex gap-6">
               <Link to="/" className="text-white hover:text-orange transition-colors">Home</Link>
