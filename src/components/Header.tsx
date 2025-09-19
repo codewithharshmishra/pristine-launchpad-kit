@@ -1,7 +1,18 @@
-import { Search, ShoppingCart, User, Menu } from "lucide-react";
+import { Search, ShoppingCart, User, Menu, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Link } from "react-router-dom";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const Header = () => {
   return (
@@ -66,20 +77,62 @@ const Header = () => {
 
         {/* Navigation */}
         <nav className="border-t border-white/10 py-3">
-          <div className="flex items-center gap-8">
-            <Link to="/shop">
-              <Button variant="ghost" className="text-white hover:text-orange">
-                <Menu className="h-4 w-4 mr-2" />
-                All Categories
-              </Button>
-            </Link>
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-8">
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="ghost" className="text-white hover:text-orange">
+                    <Menu className="h-4 w-4 mr-2" />
+                    All Categories
+                    <ChevronDown className="h-4 w-4 ml-2" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="w-56 bg-white">
+                  <DropdownMenuLabel>Shop by Category</DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem asChild>
+                    <Link to="/category/electronics" className="w-full">Electronics</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuSub>
+                    <DropdownMenuSubTrigger>
+                      <span>Clothing</span>
+                    </DropdownMenuSubTrigger>
+                    <DropdownMenuSubContent className="bg-white">
+                      <DropdownMenuItem asChild>
+                        <Link to="/category/clothing-men" className="w-full">Men</Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <Link to="/category/clothing-women" className="w-full">Women</Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <Link to="/category/clothing-kids" className="w-full">Kids</Link>
+                      </DropdownMenuItem>
+                    </DropdownMenuSubContent>
+                  </DropdownMenuSub>
+                  <DropdownMenuItem asChild>
+                    <Link to="/category/home" className="w-full">Home & Garden</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link to="/category/sports" className="w-full">Sports & Outdoors</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link to="/category/books" className="w-full">Books</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link to="/category/beauty" className="w-full">Beauty & Health</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link to="/category/automotive" className="w-full">Automotive</Link>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </div>
+            
             <div className="flex gap-6">
-              <Link to="/category/electronics" className="text-white hover:text-orange transition-colors">Electronics</Link>
-              <Link to="/category/fashion" className="text-white hover:text-orange transition-colors">Fashion</Link>
-              <Link to="/category/home" className="text-white hover:text-orange transition-colors">Home</Link>
-              <Link to="/category/sports" className="text-white hover:text-orange transition-colors">Sports</Link>
-              <Link to="/category/books" className="text-white hover:text-orange transition-colors">Books</Link>
-              <Link to="/deals" className="text-white hover:text-orange transition-colors">Deals</Link>
+              <Link to="/" className="text-white hover:text-orange transition-colors">Home</Link>
+              <Link to="/about" className="text-white hover:text-orange transition-colors">About</Link>
+              <Link to="/shop" className="text-white hover:text-orange transition-colors">Shop</Link>
+              <Link to="/contact" className="text-white hover:text-orange transition-colors">Contact Us</Link>
             </div>
           </div>
         </nav>
