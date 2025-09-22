@@ -19,11 +19,11 @@ const Header = () => {
     <header className="bg-navy text-white sticky top-0 z-50 shadow-lg">
       <div className="container mx-auto px-4">
         {/* Top bar */}
-        <div className="flex items-center justify-between py-2 border-b border-white/10">
+        <div className="hidden sm:flex items-center justify-between py-2 border-b border-white/10">
           <div className="text-sm">
             <span className="text-secondary-foreground">Free shipping on orders over $50</span>
           </div>
-          <div className="flex items-center gap-4 text-sm">
+          <div className="flex items-center gap-2 md:gap-4 text-sm">
             <Link to="/contact" className="hover:text-orange cursor-pointer">Customer Service</Link>
             <Link to="/track-order" className="hover:text-orange cursor-pointer">Track Your Order</Link>
           </div>
@@ -33,40 +33,40 @@ const Header = () => {
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <Link to="/" className="text-2xl font-bold text-white">
+            <Link to="/" className="text-xl md:text-2xl font-bold text-white">
               E<span className="text-orange">Store</span>
             </Link>
           </div>
 
           {/* Search bar */}
-          <div className="flex-1 max-w-2xl mx-8">
+          <div className="flex-1 max-w-2xl mx-4 md:mx-8">
             <div className="relative">
               <Input
                 placeholder="Search for products..."
-                className="w-full pl-4 pr-12 py-2 bg-white text-gray-900 border-0 rounded-lg"
+                className="w-full pl-4 pr-12 py-2 bg-white text-gray-900 border-0 rounded-lg text-sm md:text-base"
               />
               <Button 
                 size="sm"
-                className="absolute right-1 top-1 bg-orange hover:bg-orange/90 text-white px-4"
+                className="absolute right-1 top-1 bg-orange hover:bg-orange/90 text-white px-2 md:px-4"
               >
                 <Search className="h-4 w-4" />
               </Button>
             </div>
           </div>
 
-          {/* Right section */}
-          <div className="flex items-center gap-6">
-            <Link to="/login">
+          {/* User actions */}
+          <div className="flex items-center gap-2 md:gap-4">
+            <Link to="/login" className="hidden sm:block">
               <Button variant="ghost" className="text-white hover:text-orange">
-                <User className="h-5 w-5 mr-2" />
-                Account
+                <User className="h-5 w-5 mr-0 md:mr-2" />
+                <span className="hidden md:inline">Account</span>
               </Button>
             </Link>
             
             <Link to="/cart">
               <Button variant="ghost" className="text-white hover:text-orange relative">
-                <ShoppingCart className="h-5 w-5 mr-2" />
-                Cart
+                <ShoppingCart className="h-5 w-5 mr-0 md:mr-2" />
+                <span className="hidden md:inline">Cart</span>
                 <span className="absolute -top-1 -right-1 bg-orange text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
                   3
                 </span>
@@ -77,23 +77,24 @@ const Header = () => {
 
         {/* Navigation */}
         <nav className="border-t border-white/10 py-3">
-          <div className="flex items-center gap-8">
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="text-white hover:text-orange">
-                  <Menu className="h-4 w-4 mr-2" />
-                  All Categories
-                  <ChevronDown className="h-4 w-4 ml-2" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-56 bg-white">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-4 md:gap-8 overflow-x-auto">
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="ghost" className="text-white hover:text-orange whitespace-nowrap">
+                    <Menu className="h-4 w-4 mr-2" />
+                    All Categories
+                    <ChevronDown className="h-4 w-4 ml-2" />
+                  </Button>
+                </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-56 bg-white z-50">
                 <DropdownMenuLabel>Shop by Category</DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 <DropdownMenuSub>
                   <DropdownMenuSubTrigger>
                     <span>Electronics</span>
                   </DropdownMenuSubTrigger>
-                  <DropdownMenuSubContent className="bg-white">
+                    <DropdownMenuSubContent className="bg-white z-60">
                     <DropdownMenuItem asChild>
                       <Link to="/category/smartphones" className="w-full">Smartphones</Link>
                     </DropdownMenuItem>
@@ -197,11 +198,113 @@ const Header = () => {
               </DropdownMenuContent>
             </DropdownMenu>
             
-            <div className="flex gap-6">
-              <Link to="/" className="text-white hover:text-orange transition-colors">Home</Link>
-              <Link to="/about" className="text-white hover:text-orange transition-colors">About</Link>
-              <Link to="/shop" className="text-white hover:text-orange transition-colors">Shop</Link>
-              <Link to="/contact" className="text-white hover:text-orange transition-colors">Contact Us</Link>
+            <div className="hidden md:flex gap-4 lg:gap-6">
+              <Link to="/" className="text-white hover:text-orange transition-colors whitespace-nowrap">Home</Link>
+              <Link to="/about" className="text-white hover:text-orange transition-colors whitespace-nowrap">About</Link>
+              <Link to="/shop" className="text-white hover:text-orange transition-colors whitespace-nowrap">Shop</Link>
+              <Link to="/contact" className="text-white hover:text-orange transition-colors whitespace-nowrap">Contact Us</Link>
+            </div>
+
+            {/* Other Pages Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" className="text-white hover:text-orange whitespace-nowrap">
+                  Other Pages
+                  <ChevronDown className="h-4 w-4 ml-2" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-56 bg-white z-50">
+                <DropdownMenuLabel>Account & Orders</DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem asChild>
+                  <Link to="/login" className="w-full">Login</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/register" className="w-full">Register</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/dashboard" className="w-full">Dashboard</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/orders" className="w-full">My Orders</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/wishlist" className="w-full">Wishlist</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/address-book" className="w-full">Address Book</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/account-settings" className="w-full">Account Settings</Link>
+                </DropdownMenuItem>
+                
+                <DropdownMenuSeparator />
+                <DropdownMenuLabel>Shopping</DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem asChild>
+                  <Link to="/cart" className="w-full">Shopping Cart</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/checkout" className="w-full">Checkout</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/deals" className="w-full">Deals & Offers</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/compare" className="w-full">Compare Products</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/search" className="w-full">Search</Link>
+                </DropdownMenuItem>
+                
+                <DropdownMenuSeparator />
+                <DropdownMenuLabel>Support & Info</DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem asChild>
+                  <Link to="/faq" className="w-full">FAQ</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/track-order" className="w-full">Track Order</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/order-confirmation" className="w-full">Order Confirmation</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/privacy-policy" className="w-full">Privacy Policy</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/terms" className="w-full">Terms of Service</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/return-policy" className="w-full">Return Policy</Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+            </div>
+
+            {/* Mobile Menu */}
+            <div className="md:hidden">
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="ghost" className="text-white hover:text-orange">
+                    <Menu className="h-5 w-5" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="w-56 bg-white z-50">
+                  <DropdownMenuItem asChild>
+                    <Link to="/" className="w-full">Home</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link to="/about" className="w-full">About</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link to="/shop" className="w-full">Shop</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link to="/contact" className="w-full">Contact Us</Link>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
             </div>
           </div>
         </nav>
