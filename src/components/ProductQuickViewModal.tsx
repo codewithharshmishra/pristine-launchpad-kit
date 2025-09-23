@@ -67,21 +67,13 @@ const ProductQuickViewModal = ({ product, isOpen, onClose }: ProductQuickViewMod
       <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="sr-only">Quick View Product</DialogTitle>
-          <Button
-            variant="ghost"
-            size="icon"
-            className="absolute right-4 top-4 h-6 w-6"
-            onClick={onClose}
-          >
-            <X className="h-4 w-4" />
-          </Button>
         </DialogHeader>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Product Images Gallery */}
           <div className="space-y-4">
             {/* Main Image */}
-            <div className="relative">
+            <div className="relative aspect-square bg-background rounded-lg overflow-hidden">
               {product.isOnSale && product.discount && (
                 <Badge className="absolute top-4 left-4 bg-destructive text-white z-10">
                   -{product.discount}%
@@ -90,7 +82,7 @@ const ProductQuickViewModal = ({ product, isOpen, onClose }: ProductQuickViewMod
               <img 
                 src={allImages[currentImageIndex]} 
                 alt={product.name}
-                className="w-full h-96 md:h-[500px] object-cover rounded-lg"
+                className="w-full h-full object-contain p-4"
               />
               
               {/* Navigation arrows for multiple images */}
@@ -137,7 +129,7 @@ const ProductQuickViewModal = ({ product, isOpen, onClose }: ProductQuickViewMod
                     <img 
                       src={img} 
                       alt={`${product.name} ${index + 1}`}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain p-2 bg-background"
                     />
                   </button>
                 ))}
