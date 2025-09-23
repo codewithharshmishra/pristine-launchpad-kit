@@ -85,31 +85,31 @@ const HeroSlider = () => {
 
             {/* Content */}
             <div className="relative h-full flex items-center">
-              <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="max-w-2xl text-white">
-                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
-                    {slide.title}
-                  </h1>
-                  <p className="text-lg sm:text-xl md:text-2xl mb-8 text-white/90 leading-relaxed">
-                    {slide.subtitle}
-                  </p>
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    <Button 
-                      size="lg"
-                      className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg font-semibold"
-                    >
-                      {slide.buttonText}
-                    </Button>
-                    <Button 
-                      variant="outline" 
-                      size="lg"
-                      className="border-white/80 bg-white/10 backdrop-blur-sm text-white hover:bg-white hover:text-black px-8 py-4 text-lg font-semibold"
-                    >
-                      Learn More
-                    </Button>
-                  </div>
-                </div>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-2xl text-white">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 leading-tight">
+                {slide.title}
+              </h1>
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 text-white/90 leading-relaxed px-4 sm:px-0">
+                {slide.subtitle}
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 px-4 sm:px-0">
+                <Button 
+                  size="lg"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold"
+                >
+                  {slide.buttonText}
+                </Button>
+                <Button 
+                  variant="outline" 
+                  size="lg"
+                  className="border-white/80 bg-white/10 backdrop-blur-sm text-white hover:bg-white hover:text-black px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold"
+                >
+                  Learn More
+                </Button>
               </div>
+            </div>
+          </div>
             </div>
           </div>
         ))}
@@ -118,18 +118,18 @@ const HeroSlider = () => {
       {/* Navigation Arrows */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white p-3 rounded-full transition-all duration-200 hover:scale-110"
+        className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white p-2 sm:p-3 rounded-full transition-all duration-200 hover:scale-110"
         aria-label="Previous slide"
       >
-        <ChevronLeft className="w-6 h-6" />
+        <ChevronLeft className="w-4 h-4 sm:w-6 sm:h-6" />
       </button>
 
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white p-3 rounded-full transition-all duration-200 hover:scale-110"
+        className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white p-2 sm:p-3 rounded-full transition-all duration-200 hover:scale-110"
         aria-label="Next slide"
       >
-        <ChevronRight className="w-6 h-6" />
+        <ChevronRight className="w-4 h-4 sm:w-6 sm:h-6" />
       </button>
 
       {/* Slide Indicators */}
@@ -160,7 +160,7 @@ const HeroSlider = () => {
       </div>
 
       {/* Slide Counter */}
-      <div className="absolute top-6 right-6 bg-black/30 backdrop-blur-sm rounded-full px-4 py-2 text-white text-sm font-medium">
+      <div className="absolute top-4 sm:top-6 right-4 sm:right-6 bg-black/30 backdrop-blur-sm rounded-full px-3 py-1 sm:px-4 sm:py-2 text-white text-xs sm:text-sm font-medium">
         {currentSlide + 1} / {slides.length}
       </div>
     </section>

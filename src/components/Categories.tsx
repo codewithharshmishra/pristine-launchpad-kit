@@ -44,31 +44,31 @@ const Categories = () => {
   return (
     <section className="py-16 bg-muted">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-4">
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-text-primary mb-4">
             Shop by Category
           </h2>
-          <p className="text-lg text-text-secondary">
+          <p className="text-base sm:text-lg text-text-secondary px-4">
             Explore our wide range of product categories
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4 md:gap-6">
           {categories.map((category, index) => {
             const Icon = category.icon;
             return (
               <Button
                 key={index}
                 variant="ghost"
-                className="flex flex-col items-center p-6 h-auto bg-white hover:bg-white hover:shadow-lg transition-all duration-300 group"
+                className="flex flex-col items-center p-3 sm:p-4 md:p-6 h-auto bg-white hover:bg-white hover:shadow-lg transition-all duration-300 group"
               >
-                <div className={`p-4 rounded-full mb-3 ${category.color} group-hover:scale-110 transition-transform`}>
-                  <Icon className="h-6 w-6" />
+                <div className={`p-3 sm:p-4 rounded-full mb-2 sm:mb-3 ${category.color} group-hover:scale-110 transition-transform`}>
+                  <Icon className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" />
                 </div>
-                <h3 className="font-semibold text-text-primary mb-1">
+                <h3 className="font-semibold text-text-primary mb-1 text-xs sm:text-sm md:text-base text-center">
                   {category.name}
                 </h3>
-                <p className="text-sm text-text-secondary">
+                <p className="text-xs sm:text-sm text-text-secondary text-center">
                   {category.count}
                 </p>
               </Button>

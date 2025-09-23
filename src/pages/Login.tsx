@@ -23,14 +23,14 @@ const Login = () => {
     <div className="min-h-screen bg-background">
       <Header />
       
-      <main className="container mx-auto px-4 py-16">
+      <main className="container mx-auto px-4 py-8 sm:py-16">
         <div className="max-w-md mx-auto">
-          <div className="text-center mb-8">
-            <h1 className="text-3xl font-bold text-text-primary mb-2">Welcome Back</h1>
-            <p className="text-text-secondary">Sign in to your account to continue shopping</p>
+          <div className="text-center mb-6 sm:mb-8">
+            <h1 className="text-2xl sm:text-3xl font-bold text-text-primary mb-2">Welcome Back</h1>
+            <p className="text-sm sm:text-base text-text-secondary">Sign in to your account to continue shopping</p>
           </div>
 
-          <div className="bg-card rounded-lg p-8">
+          <div className="bg-card rounded-lg p-4 sm:p-8">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <Label htmlFor="email">Email Address</Label>

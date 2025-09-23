@@ -70,16 +70,16 @@ const BestSellers = () => {
   return (
     <section className="py-16 bg-section">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-4">
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-text-primary mb-4">
             Best Sellers
           </h2>
-          <p className="text-lg text-text-secondary">
+          <p className="text-base sm:text-lg text-text-secondary px-4">
             Our most popular products loved by thousands of customers
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
           {bestSellers.map((product) => (
             <ProductCard
               key={product.id}

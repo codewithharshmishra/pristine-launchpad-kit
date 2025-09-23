@@ -139,20 +139,20 @@ const Cart = () => {
                             variant="ghost"
                             size="sm"
                             onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                            className="px-3"
+                            className="px-2 sm:px-3 py-2"
                           >
-                            <Minus className="h-3 w-3" />
+                            <Minus className="h-3 w-3 sm:h-4 sm:w-4" />
                           </Button>
-                          <span className="px-4 py-2 text-sm min-w-12 text-center">
+                          <span className="px-3 sm:px-4 py-2 text-sm min-w-10 sm:min-w-12 text-center">
                             {item.quantity}
                           </span>
                           <Button
                             variant="ghost"
                             size="sm"
                             onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                            className="px-3"
+                            className="px-2 sm:px-3 py-2"
                           >
-                            <Plus className="h-3 w-3" />
+                            <Plus className="h-3 w-3 sm:h-4 sm:w-4" />
                           </Button>
                         </div>
 

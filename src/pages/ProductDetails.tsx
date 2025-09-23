@@ -175,51 +175,53 @@ const ProductDetails = () => {
 
             {/* Actions */}
             <div className="space-y-4 mb-8">
-              <div className="flex items-center gap-4">
-                <div className="flex items-center border border-border rounded-lg">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+                <div className="flex items-center border border-border rounded-lg w-fit">
                   <button
                     onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                    className="p-2 hover:bg-muted"
+                    className="p-2 sm:p-3 hover:bg-muted text-lg sm:text-xl"
                   >
                     -
                   </button>
-                  <span className="px-4 py-2 min-w-16 text-center">{quantity}</span>
+                  <span className="px-4 py-2 min-w-16 text-center text-base sm:text-lg">{quantity}</span>
                   <button
                     onClick={() => setQuantity(quantity + 1)}
-                    className="p-2 hover:bg-muted"
+                    className="p-2 sm:p-3 hover:bg-muted text-lg sm:text-xl"
                   >
                     +
                   </button>
                 </div>
-                <Button className="flex-1 bg-primary hover:bg-primary/90">
+                <Button className="flex-1 bg-primary hover:bg-primary/90 py-3">
                   <ShoppingCart className="h-4 w-4 mr-2" />
                   Add to Cart
                 </Button>
               </div>
 
-              <div className="flex gap-2">
+              <div className="flex flex-col sm:flex-row gap-2">
                 <Button variant="outline" className="flex-1">
                   <Heart className="h-4 w-4 mr-2" />
-                  Add to Wishlist
+                  <span className="hidden sm:inline">Add to Wishlist</span>
+                  <span className="sm:hidden">Wishlist</span>
                 </Button>
-                <Button variant="outline">
-                  <Share2 className="h-4 w-4" />
+                <Button variant="outline" className="sm:w-auto">
+                  <Share2 className="h-4 w-4 sm:mr-0 mr-2" />
+                  <span className="sm:hidden">Share</span>
                 </Button>
               </div>
             </div>
 
             {/* Guarantees */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="flex items-center gap-2 text-sm">
-                <Truck className="h-4 w-4 text-primary" />
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+              <div className="flex items-center gap-2 text-sm bg-muted/50 p-3 rounded-lg">
+                <Truck className="h-4 w-4 text-primary flex-shrink-0" />
                 <span>Free Shipping</span>
               </div>
-              <div className="flex items-center gap-2 text-sm">
-                <Shield className="h-4 w-4 text-primary" />
+              <div className="flex items-center gap-2 text-sm bg-muted/50 p-3 rounded-lg">
+                <Shield className="h-4 w-4 text-primary flex-shrink-0" />
                 <span>2 Year Warranty</span>
               </div>
-              <div className="flex items-center gap-2 text-sm">
-                <RotateCcw className="h-4 w-4 text-primary" />
+              <div className="flex items-center gap-2 text-sm bg-muted/50 p-3 rounded-lg">
+                <RotateCcw className="h-4 w-4 text-primary flex-shrink-0" />
                 <span>30 Day Returns</span>
               </div>
             </div>

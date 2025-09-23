@@ -91,26 +91,26 @@ const ProductCard = ({
       </div>
 
       {/* Product Info */}
-      <div className="space-y-3">
-        <h3 className="font-semibold text-text-primary line-clamp-2 group-hover:text-teal transition-colors">
+      <div className="space-y-2 sm:space-y-3">
+        <h3 className="font-semibold text-sm sm:text-base text-text-primary line-clamp-2 group-hover:text-teal transition-colors">
           {name}
         </h3>
         
         {/* Rating */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1 sm:gap-2">
           <div className="flex">
             {renderStars(rating)}
           </div>
-          <span className="text-sm text-text-secondary">({reviews})</span>
+          <span className="text-xs sm:text-sm text-text-secondary">({reviews})</span>
         </div>
 
         {/* Price */}
         <div className="flex items-center gap-2">
-          <span className="text-xl font-bold text-text-primary">
+          <span className="text-lg sm:text-xl font-bold text-text-primary">
             ${price.toFixed(2)}
           </span>
           {originalPrice && (
-            <span className="text-sm text-text-secondary line-through">
+            <span className="text-xs sm:text-sm text-text-secondary line-through">
               ${originalPrice.toFixed(2)}
             </span>
           )}
@@ -118,14 +118,15 @@ const ProductCard = ({
 
         {/* Add to Cart Button */}
         <Button 
-          className="w-full bg-primary hover:bg-primary/90 text-white transition-all duration-300 group"
+          className="w-full bg-primary hover:bg-primary/90 text-white transition-all duration-300 group text-sm sm:text-base py-2 sm:py-3"
           onClick={(e) => {
             e.stopPropagation();
             // Add to cart functionality here
           }}
         >
-          <ShoppingCart className="h-4 w-4 mr-2 group-hover:rotate-12 transition-transform" />
-          Add to Cart
+          <ShoppingCart className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2 group-hover:rotate-12 transition-transform" />
+          <span className="hidden sm:inline">Add to Cart</span>
+          <span className="sm:hidden">Add</span>
         </Button>
       </div>
     </div>

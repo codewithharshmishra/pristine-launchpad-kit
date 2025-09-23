@@ -12,14 +12,14 @@ const Contact = () => {
     <div className="min-h-screen bg-background">
       <Header />
       <main className="container mx-auto px-4 py-8">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-text-primary mb-4">Contact Us</h1>
-          <p className="text-lg text-text-secondary max-w-2xl mx-auto">
+        <div className="text-center mb-8 sm:mb-12">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-text-primary mb-4">Contact Us</h1>
+          <p className="text-base sm:text-lg text-text-secondary max-w-2xl mx-auto px-4">
             Have a question or need help? We're here to assist you. Get in touch with our customer support team.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 sm:gap-8">
           {/* Contact Form */}
           <Card>
             <CardHeader>
